@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .pixel-grid {
     position: fixed;
     top: 0;
@@ -487,4 +491,5 @@ footer {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+
 }
