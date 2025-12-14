@@ -164,12 +164,6 @@ nav a::after {
     margin-bottom: 3rem;
 }
 
-/* .cv:hover {
-    background: #00ff64;
-    color: #0f0f1a;
-    box-shadow: 0 0 20px #00ff64;
-    transform: translateY(-2px);
-} */
 
 .btn {
     padding: 1rem 2rem;
@@ -491,5 +485,218 @@ footer {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}
 
+
+.socials {
+    background: rgba(30, 0, 255, 0.05);
+    border: 2px solid rgba(30, 0, 255, 0.3);
+    padding: 4rem 2rem;
+    margin: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.socials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.socials h2::before {
+    content: '// ';
+    color: #1e00ff;
+}
+
+.socials > p {
+    font-size: 1.2rem;
+    color: #999;
+    margin-bottom: 2.5rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.insta-container {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.social-btn {
+    background: rgba(30, 0, 255, 0.08);
+    border: 2px solid rgba(30, 0, 255, 0.4);
+    padding: 1.5rem 1rem;
+    text-decoration: none;
+    color: #1e00ff;
+    font-weight: 700;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #1e00ff, #00d4ff);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+    border-color: #1e00ff;
+    box-shadow: 0 0 30px rgba(30, 0, 255, 0.5);
+}
+
+.social-btn:hover::before {
+    opacity: 0.3;
+}
+
+.social-icon {
+    font-size: 2rem;
+}
+
+/* Instagram Special Button */
+.insta-gate {
+    background: rgba(255, 0, 255, 0.05);
+    border: 2px solid rgba(255, 0, 255, 0.5);
+    cursor: pointer;
+}
+
+.insta-gate:hover {
+    border-color: #ff00ff;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+}
+
+.insta-gate .social-icon {
+    color: #ff00ff;
+}
+
+.insta-gate span {
+    color: #ff00ff;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #0f0f1a;
+    border: 3px solid #ff00ff;
+    padding: 3rem;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(255, 0, 255, 0.5);
+    animation: modalPop 0.3s ease-out;
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content h3 {
+    color: #ff00ff;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.modal-content p {
+    color: #999;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 1rem 2rem;
+    border: 2px solid;
+    background: transparent;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-btn.yes {
+    color: #00ff64;
+    border-color: #00ff64;
+}
+
+.modal-btn.yes:hover {
+    background: #00ff64;
+    color: #0f0f1a;
+    box-shadow: 0 0 20px #00ff64;
+}
+
+.modal-btn.no {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.modal-btn.no:hover {
+    background: #ff0000;
+    color: #0f0f1a;
+    box-shadow: 0 0 20px #ff0000;
+}
+
+.denied-message {
+    color: #ff0000;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    text-shadow: 0 0 10px #ff0000;
 }
