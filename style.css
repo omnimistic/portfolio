@@ -36,7 +36,7 @@ nav {
     width: 100%;
     background: rgba(15, 15, 26, 0.95);
     backdrop-filter: blur(10px);
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     z-index: 1000;
     border-bottom: 2px solid #00ff64;
     box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
@@ -45,18 +45,21 @@ nav {
 nav .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 nav .logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #00ff64;
     text-shadow: 0 0 10px #00ff64;
     font-family: 'Courier New', monospace;
+    white-space: nowrap;
 }
 
 nav .logo::before {
@@ -65,15 +68,18 @@ nav .logo::before {
 
 nav .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 nav a {
     color: #999;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     transition: all 0.3s;
     position: relative;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -155,6 +161,7 @@ nav a::after {
     gap: 1rem;
     justify-content: center;
     margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
 .cv {
@@ -163,7 +170,6 @@ nav a::after {
     justify-content: center;
     margin-bottom: 3rem;
 }
-
 
 .btn {
     padding: 1rem 2rem;
@@ -469,25 +475,6 @@ footer {
     opacity: 0.7;
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
 .socials {
     background: rgba(30, 0, 255, 0.05);
     border: 2px solid rgba(30, 0, 255, 0.3);
@@ -528,12 +515,6 @@ footer {
 .insta-container {
     grid-column: 1 / -1;
     margin-top: 1rem;
-}
-
-@media (max-width: 768px) {
-    .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 .social-btn {
@@ -581,7 +562,6 @@ footer {
     font-size: 2rem;
 }
 
-/* Instagram Special Button */
 .insta-gate {
     background: rgba(255, 0, 255, 0.05);
     border: 2px solid rgba(255, 0, 255, 0.5);
@@ -601,7 +581,6 @@ footer {
     color: #ff00ff;
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -699,4 +678,104 @@ footer {
     font-size: 1.3rem;
     margin-top: 1rem;
     text-shadow: 0 0 10px #ff0000;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 0;
+    }
+
+    nav .container {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 0 1rem;
+    }
+
+    nav .logo {
+        font-size: 1.1rem;
+    }
+
+    nav .nav-links {
+        gap: 0.8rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        padding: 0.3rem;
+    }
+
+    .hero {
+        padding: 7rem 1.5rem 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .about-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-content {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .modal-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.7rem;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
